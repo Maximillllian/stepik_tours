@@ -1,0 +1,10 @@
+<h1>Пссс, ты знал, что имя {{ name }} очень крутое? А еще у нас есть кот {{ cat }}</h1>
+<div>
+{% if summary %}
+summary
+{% else %}
+<a href="{% url 'time-loop' year|add:"-1" %}">{{ year|add:"-1" }}</a>
+<a href="{% url 'time-loop' year|add:"1" %}">{{ year|add:"1" }}</a>
+<a href="{% url 'imagestore-summary' year %}">summary</a>
+{% endif %}
+</div>
