@@ -42,15 +42,3 @@ class TourView(View):
         departure = departures[tour['departure']]
         context = {'tour': tour, 'stars': stars, 'departure': departure}
         return render(request, 'tours/tour.html', context=context)
-
-
-class TestView(View):
-
-    def get(self, request, year, **kwargs):
-        summary = kwargs.get('summary', False)
-        context = {'name': 'Max', 'cat': 'Phenix', 'summary': summary, 'year': year}
-        if year < 1900:
-            return HttpResponseRedirect(reverse('time-loop', args=[2000]))
-        elif year > 2000:
-            return HttpResponseRedirect(reverse('time-loop', kwargs={'year': 1900}))
-        return render(request, 'test.html', context=context)
