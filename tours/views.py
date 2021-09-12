@@ -4,6 +4,7 @@ from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
 from django.urls import reverse
+
 from data import tours, departures
 
 
